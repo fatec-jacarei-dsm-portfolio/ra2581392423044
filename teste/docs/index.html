@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="auto">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>André Ramos | Portfólio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
+  <script defer src="projetos.js"></script>
+</head>
+<body>
+  <header id="main-header" class="glass-nav solid">
+    <nav class="navbar classic-header">
+      <a href="#principal" class="logo" id="logo-main">andreramos282</a>
+      <ul class="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projeto-atual">Projeto</a></li>
+        <li><a href="#conhecimentos">Conhecimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <div class="header-socials">
+        <a href="https://www.instagram.com/drezin_2812/" target="_blank" aria-label="Instagram">
+          <img src="oimg/logo insta.png" alt="Instagram"/>
+        </a>
+        <a href="https://github.com/andreramos282" target="_blank" aria-label="GitHub">
+          <img src="oimg/logo github.png" alt="GitHub"/>
+        </a>
+        <a href="https://www.linkedin.com/in/andré-luis-283085252" target="_blank" aria-label="LinkedIn">
+          <img src="oimg/logo linkedin.png" alt="LinkedIn"/>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="principal" class="hero-section fade-in">
+      <div class="hero-content">
+        <h1 class="main-title">Olá! Sou <span class="highlight-blue">André Ramos</span></h1>
+        <h2 class="hero-subtitle typewriter"><span id="typewriter-text"></span><span class="typewriter-cursor">|</span></h2>
+        <p class="hero-desc">Estudante de DSM na Fatec Jacareí, apaixonado por tecnologia e desenvolvimento web.<br>
+          Busco sempre desafios para evoluir e criar soluções criativas!</p>
+        <a href="#contato" class="btn-blue">Fale comigo</a>
+      </div>
+      <div class="hero-img">
+        <img src="oimg/foto-perfil.png" alt="Notebook" />
+      </div>
+    </section>
+
+    <section id="projeto-atual" class="projeto-atual-section glass-card fade-in-up">
+      <h2 class="section-title">Projeto Atual</h2>
+      <div class="projeto-card-big">
+        <img src="oimg/project-thumb.png" alt="Projeto Atual" />
+        <div class="projeto-card-info">
+          <h3 class="projeto-title">Portfólio Fatec</h3>
+          <p>Portfólio moderno feito com HTML, CSS, JS e integração com API do GitHub. Exibe projetos, conhecimentos e contato.</p>
+          <a href="https://github.com/andreramos282/ra2581392423044" target="_blank" class="btn-blue">Ver repositório</a>
+        </div>
+      </div>
+      <button id="ver-mais-projetos" class="btn-blue-outline">Ver mais projetos</button>
+    </section>
+
+    <section id="projetos-lista" class="projetos-lista-transition" style="display:none;">
+      <div class="proj-lista-top">
+        <h2 class="section-title">Meus Projetos no GitHub</h2>
+        <button id="voltar-home" class="btn-blue-outline">← Voltar</button>
+      </div>
+      <div id="github-projects-container"></div>
+    </section>
+
+    <section id="conhecimentos" class="glass-card fade-in-up">
+      <h2 class="section-title">Conhecimentos</h2>
+      <div class="skills-cards-container custom-grid-3-2" id="skills-cards">
+        <div class="skill-card">
+          <img src="oimg/html5.png" alt="HTML5" />
+          <span>HTML5</span>
+          <p>Criação de páginas web estruturadas, seguindo padrões de acessibilidade e SEO.</p>
+        </div>
+        <div class="skill-card">
+          <img src="oimg/css3.png" alt="CSS3" />
+          <span>CSS3</span>
+          <p>Estilização avançada com Flexbox, Grid, responsividade e animações modernas.</p>
+        </div>
+        <div class="skill-card">
+          <img src="oimg/js.png" alt="JavaScript" />
+          <span>JavaScript</span>
+          <p>Interatividade em sites, manipulação de DOM, consumo de APIs e lógica de front-end.</p>
+        </div>
+        <div class="skill-card">
+          <img src="oimg/typescript.png" alt="TypeScript" />
+          <span>TypeScript</span>
+          <p>Tipagem estática para projetos JavaScript, tornando o código mais seguro e escalável.</p>
+        </div>
+        <div class="skill-card">
+          <img src="oimg/react-tsx.png" alt="React" />
+          <span>React</span>
+          <p>Criação de interfaces modernas e dinâmicas usando componentes e o ecossistema React.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="glass-card fade-in">
+      <h2 class="section-title">Fale comigo</h2>
+      <form class="contato-form">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+        <button type="submit" class="btn-blue">Enviar</button>
+      </form>
+      <div style="margin-top:1.2em;font-size:1.1rem;">
+        Ou envie um e-mail direto:
+        <a href="mailto:andreramosdsmp@gmail.com" class="btn-blue" style="margin-left:0.5em;">
+        <img src="oimg/email.png" alt="email" style="vertical-align:middle;width:22px;margin-right:5px;">andreramosjr11@gmail.com</a>
+      </div>
+      <div style="margin-top:1.2em;font-size:1.1rem;">
+        Ou entre em contato pelo WhatsApp:
+        <a href="https://wa.me/5512981598561" target="_blank" class="btn-blue whatsapp-btn" style="margin-left:0.5em;">
+          <img src="oimg/whatsapp.png" alt="WhatsApp" style="vertical-align:middle;width:22px;margin-right:5px;">whatsapp
+        </a>
+      </div>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer class="lucyan-footer glass-footer">
+    <div class="lucyan-footer-container">
+      <div class="lucyan-footer-left">
+        <span class="lucyan-footer-logo">andreramos</span>
+        <p class="lucyan-footer-copyright">
+          ©2025 por André Ramos.<br>
+          Todos os direitos reservados.
+        </p>
+      </div>
+      <div class="lucyan-footer-socials">
+        <a href="https://www.instagram.com/drezin_2812/" target="_blank" aria-label="Instagram">
+          <img src="oimg/logo insta.png" alt="Instagram"/>
+        </a>
+        <a href="https://github.com/andreramos282" target="_blank" aria-label="GitHub">
+          <img src="oimg/logo github.png" alt="GitHub"/>
+        </a>
+        <a href="https://www.linkedin.com/in/andré-luis-283085252" target="_blank" aria-label="LinkedIn">
+          <img src="oimg/logo linkedin.png" alt="LinkedIn"/>
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
