@@ -12,7 +12,13 @@
   <header id="main-header" class="glass-nav solid">
     <nav class="navbar classic-header">
       <a href="#principal" class="logo" id="logo-main">andreramos282</a>
-      <ul class="nav-links">
+      <!-- Botão hamburguer -->
+      <button id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-modal">
+        <span class="hamburguer-bar"></span>
+        <span class="hamburguer-bar"></span>
+        <span class="hamburguer-bar"></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#projeto-atual">Projeto</a></li>
         <li><a href="#conhecimentos">Conhecimentos</a></li>
@@ -31,6 +37,33 @@
       </div>
     </nav>
   </header>
+
+   <div id="menu-modal" class="menu-modal">
+  <div class="menu-modal-content">
+    <div class="menu-header">
+      <span class="logo-modal">andreramos282</span>
+      <button id="close-menu" aria-label="Fechar menu">&times;</button>
+    </div>
+    <ul class="nav-links-modal">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#projeto-atual">Projetos</a></li>
+      <li><a href="#conhecimentos">Conhecimentos</a></li>
+      <li><a href="#contato">Fale comigo</a></li>
+    </ul>
+    <div class="header-socials-modal">
+      <a href="https://www.instagram.com/drezin_2812/" target="_blank" aria-label="Instagram">
+        <img src="oimg/logo insta.png" alt="Instagram"/>
+      </a>
+      <a href="https://github.com/andreramos282" target="_blank" aria-label="GitHub">
+        <img src="oimg/logo github.png" alt="GitHub"/>
+      </a>
+      <a href="https://www.linkedin.com/in/andré-luis-283085252" target="_blank" aria-label="LinkedIn">
+        <img src="oimg/logo linkedin.png" alt="LinkedIn"/>
+      </a>
+    </div>
+  </div>
+</div>
+
   <main>
     <section id="principal" class="hero-section fade-in">
       <div class="hero-content">
@@ -61,7 +94,9 @@
     <section id="projetos-lista" class="projetos-lista-transition" style="display:none;">
       <div class="proj-lista-top">
         <h2 class="section-title">Meus Projetos no GitHub</h2>
-        <button id="voltar-home" class="btn-blue-outline">← Voltar</button>
+        <button id="voltar-home" class="btn-blue-outline">
+          &larr; Voltar
+        </button>
       </div>
       <div id="github-projects-container"></div>
     </section>
@@ -108,14 +143,12 @@
       <div style="margin-top:1.2em;font-size:1.1rem;">
         Ou envie um e-mail direto:
         <a href="mailto:andreramosdsmp@gmail.com" class="btn-blue" style="margin-left:0.5em;">
-        <img src="oimg/email.png" alt="email" style="vertical-align:middle;width:22px;margin-right:5px;">andreramosjr11@gmail.com</a>
+          <img src="oimg/email.png" alt="email" style="vertical-align:middle;width:22px;margin-right:5px;">andreramosjr11@gmail.com</a>
       </div>
       <div style="margin-top:1.2em;font-size:1.1rem;">
         Ou entre em contato pelo WhatsApp:
         <a href="https://wa.me/5512981598561" target="_blank" class="btn-blue whatsapp-btn" style="margin-left:0.5em;">
           <img src="oimg/whatsapp.png" alt="WhatsApp" style="vertical-align:middle;width:22px;margin-right:5px;">whatsapp
-        </a>
-      </div>
         </a>
       </div>
     </section>

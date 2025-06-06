@@ -8,8 +8,6 @@
   --glass-border: rgba(0,112,243,0.18);
   --glass-blur: 18px;
   --text: #f5f5f5;
-  --card-radius: 24px;
-  --shadow: 0 8px 32px 0 rgba(0, 112, 243, 0.15);
   --font-main: 'Inter', 'Segoe UI', Arial, sans-serif;
 }
 
@@ -19,7 +17,6 @@ body {
   font-family: var(--font-main);
   margin: 0;
   min-height: 100vh;
-  letter-spacing: 0.01rem;
 }
 
 header {
@@ -28,33 +25,11 @@ header {
   width: 100%;
   z-index: 9999;
 }
-
-.glass-nav {
-  width: 100%;
-  transition: background 0.32s, box-shadow 0.32s, border 0.32s;
-  border-bottom: 1.5px solid transparent;
-}
-.glass-nav.solid {
-  background: var(--bg);
-  border-bottom: none;
-  box-shadow: none;
-}
-.glass-nav.translucent {
-  background: var(--glass-bg-blur);
-  border-bottom: 1.5px solid var(--glass-border);
-  backdrop-filter: blur(var(--glass-blur));
-  box-shadow: var(--shadow);
-}
-
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.8rem 2rem 0.8rem 2rem;
-  font-size: 1rem;
-  font-family: var(--font-main);
-  max-width: 1300px;
-  margin: 0 auto;
+  padding: 1rem 2rem;
 }
 .logo {
   color: var(--blue);
@@ -62,15 +37,11 @@ header {
   font-size: 1.7rem;
   letter-spacing: 2px;
   text-decoration: none;
-  transition: color 0.2s;
   font-family: var(--font-main);
-}
-.logo:hover {
-  color: var(--blue-hover);
 }
 .nav-links {
   display: flex;
-  gap: 2.1rem;
+  gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -80,39 +51,228 @@ header {
   font-weight: 700;
   text-decoration: none;
   font-size: 1.08rem;
-  letter-spacing: 0.02em;
-  padding: 2px 0;
-  transition: color 0.2s;
-  position: relative;
   font-family: var(--font-main);
 }
-.nav-links a:hover, .nav-links a.active {
-  color: var(--blue);
-}
-.nav-links a.active::after, .nav-links a:hover::after {
-  content: "";
-  display: block;
-  height: 3px;
-  background: var(--blue);
-  border-radius: 2px;
-  margin-top: 2px;
-  width: 100%;
+.header-socials {
+  display: flex;
+  align-items: center;
 }
 .header-socials img {
   width: 28px;
   height: 28px;
   margin-left: 1rem;
-  filter: grayscale(0.2);
-  opacity: 0.85;
+  border-radius: 50%;
+  background: #fff;
+  padding: 3px;
+}
+
+#menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  height: 32px;
+  width: 38px;
+  margin-left: auto;
+  z-index: 1200;
+  position: relative;
+}
+.hamburguer-bar {
+  width: 28px;
+  height: 3px;
+  background: var(--blue);
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+  display: block;
+  position: relative;
+}
+
+/* Hamburguer vira X */
+#menu-toggle.open .hamburguer-bar:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+#menu-toggle.open .hamburguer-bar:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle.open .hamburguer-bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  #menu-toggle { display: flex; }
+  .nav-links, .header-socials { display: none !important; }
+}
+
+/* MODAL MENU */
+.menu-modal {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(16,21,34,0.72);
+  backdrop-filter: blur(12px);
+  justify-content: center;
+  align-items: center;
+}
+.menu-modal.open { display: flex; }
+.menu-modal-content {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  padding-top: 0;
+}
+
+.menu-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.2rem 2rem 2.2rem 2rem;
+  max-width: 480px;
+  margin: 0 auto 0.5em auto;
+}
+.logo-modal {
+  color: var(--blue);
+  font-family: var(--font-main);
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+#close-menu {
+  background: transparent;
+  border: none;
+  color: var(--blue);
+  font-size: 2.3rem;
+  font-weight: 900;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.18s;
+}
+#close-menu:hover {
+  color: var(--blue-hover);
+}
+.nav-links-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+  margin: 3rem 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+.nav-links-modal li a {
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.3em 1.6em;
+  background: none !important;
+  box-shadow: none !important;
+  transition: color 0.16s;
+  text-align: center;
+  display: block;
+  letter-spacing: 0.02em;
+}
+.nav-links-modal li a:hover,
+.nav-links-modal li a.active {
+  color: var(--blue);
+  background: none !important;
+}
+.header-socials-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 2.5rem 0 0 0;
+}
+.header-socials-modal img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: transparent;
+  padding: 0;
+  filter: none !important;
+  box-shadow: none !important;
+  opacity: 1;
+  transition: filter 0.2s, opacity 0.2s;
+}
+.header-socials-modal img:hover {
+  filter: grayscale(0) drop-shadow(0 0 8px #0070f380);
+  opacity: 1;
+}
+
+body.menu-modal-open { overflow: hidden; }
+#close-menu:hover { color: var(--blue-hover); }
+.nav-links-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+  margin: 0 0 2.7rem 0;
+  padding: 0;
+  list-style: none;
+}
+.nav-links-modal li a {
+  color: #fff;
+  font-size: 1.13rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  padding: 0.5em 1.5em;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.18);
+  transition: background 0.18s, color 0.16s;
+  text-align: center;
+  display: block;
+}
+.nav-links-modal li a:hover,
+.nav-links-modal li a.active {
+  color: var(--blue);
+  background: rgba(0,112,243,0.10);
+}
+
+/* Redes Sociais no Modal */
+.header-socials-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 1.7rem 0 0 0;
+}
+.header-socials-modal img {
+  width: 28px;
+  height: 28px;
+  filter: grayscale(0.1);
+  opacity: 0.95;
   transition: filter 0.2s, opacity 0.2s;
   border-radius: 50%;
   background: #fff;
   padding: 3px;
-  box-shadow: 0 2px 8px #0070f322;
+  box-shadow: 0 1px 8px #0070f340;
 }
-.header-socials img:hover {
-  filter: grayscale(0) drop-shadow(0 0 6px #0070f3ad);
+.header-socials-modal img:hover {
+  filter: grayscale(0) drop-shadow(0 0 8px #0070f380);
   opacity: 1;
+}
+
+/* Impede scroll do fundo quando menu aberto */
+body.menu-modal-open {
+  overflow: hidden;
+}
+
+@media (min-width: 801px) {
+  #menu-toggle, .menu-modal {
+    display: none !important;
+  }
 }
 
 /* Títulos */
@@ -401,16 +561,23 @@ header {
 }
 @media (max-width: 600px) {
   .skills-cards-container.custom-grid-3-2 {
-    grid-template-columns: 1fr;
-    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em !important;
+    max-width: 98vw;
+    width: 100%;
+    padding: 0;
   }
   .skills-cards-container.custom-grid-3-2 .skill-card {
-    grid-column: 1;
-    justify-self: center;
+    width: 95vw;
+    max-width: 340px;
+    min-width: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 }
 
-/* Skill card visual */
 .skill-card {
   background: var(--glass-bg);
   border-radius: 14px;
@@ -448,8 +615,6 @@ header {
   box-shadow: 0 6px 26px #0070f32a;
   border-color: var(--blue);
 }
-
-/* Outros estilos... mantidos do modelo anterior... */
 
 section {
   padding: 3.5em 0 2.5em 0;
@@ -545,14 +710,12 @@ section#contato {
   filter: drop-shadow(0 0 10px #0070f3aa);
 }
 
-/* WhatsApp btn */
 .whatsapp-btn img {
   filter: drop-shadow(0 0 2px #25d366);
   vertical-align: middle;
   margin-bottom: 2px;
 }
 
-/* Transição suave para a seção de projetos */
 #projetos-lista.projetos-lista-transition {
   opacity: 0;
   pointer-events: none;
@@ -605,9 +768,7 @@ section#contato {
 .fade-in-up {
   animation: fadeInUp 1.5s cubic-bezier(0.19,1,0.22,1) both;
 }
-/* ...restante do CSS... */
 
-/* Modal Projeto */
 #modal-projeto {
   display: none;
   position: fixed;
@@ -712,4 +873,93 @@ section#contato {
 @media (max-width: 600px) {
   #modal-projeto .modal-card { min-width: 0; padding: 1em 0.2em 2em 0.2em; }
   #modal-projeto .modal-projeto-img { max-width: 92vw; }
+}
+
+/* Ajuste nos títulos e textos hero para telas pequenas */
+@media (max-width: 600px) {
+  .main-title, .section-title {
+    font-size: 1.5rem;
+    padding: 0 6vw;
+  }
+  .hero-section {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 2.2rem 2vw 1.5rem 2vw;
+  }
+  .hero-content h1 {
+    font-size: 1.4rem;
+  }
+  .hero-img img {
+    width: 150px;
+    max-width: 80vw;
+  }
+  .hero-desc {
+    font-size: 1em;
+    padding: 0 2vw;
+  }
+}
+
+/* Cards dos projetos responsivos */
+@media (max-width: 700px) {
+  .projeto-card-big {
+    flex-direction: column;
+    gap: 1em;
+    align-items: flex-start;
+    padding: 0.8em 0.2em;
+  }
+  .projeto-card-big img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 0.5em;
+  }
+}
+
+/* Grid de projetos responsivo */
+@media (max-width: 600px) {
+  #github-projects-container {
+    grid-template-columns: 1fr;
+    gap: 1.2em;
+    padding: 0 2vw;
+  }
+  .github-projeto-card {
+    padding: 1em 0.7em 1em 0.7em;
+    font-size: 0.98em;
+  }
+}
+
+/* Footer responsivo */
+@media (max-width: 700px) {
+  .lucyan-footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 0 1vw;
+  }
+  .lucyan-footer-left, .lucyan-footer-socials {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* Ajustes extras para formulários em telas pequenas */
+@media (max-width: 500px) {
+  .contato-form {
+    max-width: 98vw;
+    font-size: 0.98rem;
+  }
+  .contato-form input, .contato-form textarea {
+    font-size: 1em;
+    padding: 10px;
+  }
+  .btn-blue, .btn-blue-outline {
+    width: 100%;
+    font-size: 1em;
+    padding: 0.7em 0;
+  }
+}
+
+/* Melhora de acessibilidade e foco */
+.nav-links a:focus, .btn-blue:focus, .btn-blue-outline:focus {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
 }
