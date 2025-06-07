@@ -36,3 +36,5 @@ document.addEventListener("DOMContentLoaded", () => {
       typewriter(devAnimated, "Desenvolvedor Web Front-end.", 55);
     }
   });
+  
+  
