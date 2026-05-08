@@ -1,86 +1,179 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="auto">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>andreramos282 // Portfólio</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="main.js"></script>
-  <script defer src="typewriter.js"></script>
-  <script defer src="secret-logo.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>André Ramos | Portfólio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #06b6d4;
+            --text-white: #f8fafc;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --glass: rgba(15, 23, 42, 0.9);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: var(--primary); 
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        nav {
+            position: sticky; top: 0; background: var(--glass);
+            backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000;
+        }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { font-weight: 800; font-size: 1.2rem; color: var(--accent); }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a {
+            text-decoration: none; color: var(--text-dim); font-weight: 600;
+            font-size: 0.9rem; cursor: pointer; transition: 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-white); }
+
+        .page { display: none; padding: 60px 0; animation: fadeIn 0.5s ease; }
+        .page.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .profile-header { display: flex; align-items: center; gap: 40px; margin-bottom: 80px; }
+        .profile-img { width: 180px; height: 180px; border-radius: 24px; object-fit: cover; border: 2px solid var(--accent); }
+        .profile-info h1 { font-size: 2.8rem; letter-spacing: -1px; }
+
+        .section-title { 
+            font-size: 1.5rem; margin: 50px 0 25px; 
+            display: flex; align-items: center; gap: 12px;
+            padding-bottom: 10px; border-bottom: 1px solid var(--border);
+        }
+        
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+        
+        .card {
+            background: var(--secondary); border: 1px solid var(--border);
+            padding: 30px; border-radius: 16px; text-decoration: none; color: inherit;
+            transition: 0.3s; display: flex; flex-direction: column;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .card h3 { margin-bottom: 12px; font-size: 1.2rem; color: var(--text-white); }
+        .card p { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 20px; flex-grow: 1; }
+        .card-footer { font-size: 0.75rem; font-weight: 700; color: var(--accent); text-transform: uppercase; }
+
+        footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 80px; text-align: center; }
+        .socials { display: flex; justify-content: center; gap: 25px; margin-bottom: 20px; }
+        .socials a { color: var(--text-dim); font-size: 1.5rem; transition: 0.3s; }
+        .socials a:hover { color: var(--accent); }
+    </style>
 </head>
 <body>
-  <!-- HEADER igual ao das outras abas -->
-  <header>
-    <nav class="navbar">
-      <a href="index.html" class="logo">andreramos282</a>
-      <ul class="nav-links">
-        <li><a href="sobre.html">Sobre mim</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="conhecimentos.html">Conhecimentos</a></li>
-        <li><a href="contato.html">Fale comigo</a></li>
-      </ul>
-      <div class="header-socials">
-        <a href="https://www.instagram.com/drezin_2812/" target="_blank" aria-label="Instagram">
-          <img src="oimg/logo insta.png" alt="Instagram"/>
-        </a>
-        <a href="https://github.com/andreramos282" target="_blank" aria-label="GitHub">
-          <img src="oimg/logo github.png" alt="GitHub"/>
-        </a>
-        <a href="https://www.linkedin.com/in/andré-luis-283085252" target="_blank" aria-label="LinkedIn">
-          <img src="oimg/logo linkedin.png" alt="LinkedIn"/>
-        </a>
-        <a href="https://twitter.com/seutwitter" target="_blank" aria-label="Twitter">
-          <img src="oimg/logo twitter.png" alt="Twitter"/>
-        </a>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <section class="hero-animated">
-      <div class="hero-animated-left">
-        <span class="hello-green">HELLO WORLD 👋</span>
-        <h1>Eu sou <span id="hero-nome" class="logo click-cursor">André Ramos,</span></h1>
-        <h2 id="dev-animated" class="dev-animated">Desenvolvedor Web Front-end.</h2>
-        <a href="contato.html" class="btn-green">FALE COMIGO</a>
-      </div>
-      <div class="hero-animated-right">
-        <div class="hero-green-circle">
-          <img src="oimg/hero-laptop.png" alt="Notebook com ícones de linguagem" class="hero-laptop">
-          <img src="oimg/html5.png" class="hero-lang hero-lang-html" alt="HTML5"/>
-          <img src="oimg/css3.png" class="hero-lang hero-lang-css" alt="CSS3"/>
-          <img src="oimg/js.png" class="hero-lang hero-lang-js" alt="JS"/>
-          <img src="oimg/typescript.png" class="hero-lang hero-lang-ts" alt="TS"/>
-          <img src="oimg/react-tsx.png" class="hero-lang hero-lang-tsx" alt="TSX"/>
+
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">ANDRÉ RAMOS</div>
+            <div class="nav-links">
+                <a onclick="showPage('home')" id="btn-home" class="active">Início</a>
+                <a onclick="showPage('arquivo')" id="btn-arquivo">Projetos</a>
+            </div>
         </div>
-      </div>
-    </section>
-  </main>
-  <!-- FOOTER igual ao das outras abas -->
-  <footer class="lucyan-footer">
-    <div class="lucyan-footer-container">
-      <div class="lucyan-footer-left">
-        <span class="lucyan-footer-logo">andreramos</span>
-        <p class="lucyan-footer-copyright">
-          ©2025 por André Ramos.<br>
-          Todos os direitos reservados.
-        </p>
-      </div>
-      <div class="lucyan-footer-socials">
-        <a href="https://www.instagram.com/drezin_2812/" target="_blank" aria-label="Instagram">
-          <img src="oimg/logo insta.png" alt="Instagram" />
-        </a>
-        <a href="https://github.com/andreramos282" target="_blank" aria-label="GitHub">
-          <img src="oimg/logo github.png" alt="GitHub" />
-        </a>
-        <a href="https://www.linkedin.com/in/andré-luis-283085252" target="_blank" aria-label="LinkedIn">
-          <img src="oimg/logo linkedin.png" alt="LinkedIn" />
-        </a>
-        <a href="https://twitter.com/seutwitter" target="_blank" aria-label="Twitter">
-          <img src="oimg/logo twitter.png" alt="Twitter" />
-        </a>
-      </div>
+    </nav>
+
+    <div class="container">
+        <section id="home" class="page active">
+            <div class="profile-header">
+                <img src="https://github.com/andreramos282.png" alt="André Ramos" class="profile-img">
+                <div class="profile-info">
+                    <h1>André Ramos</h1>
+                    <p style="color: var(--text-dim); font-size: 1.1rem;">Desenvolvedor de Software | Engenharia</p>
+                </div>
+            </div>
+
+            <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Projetos Integradores (ABP)</h2>
+            <div id="abp-grid" class="projects-grid"></div>
+
+            <h2 class="section-title"><i class="fa-solid fa-star"></i> Destaques Técnicos</h2>
+            <div id="highlights-grid" class="projects-grid"></div>
+        </section>
+
+        <section id="arquivo" class="page">
+            <h2 class="section-title">Repositórios Públicos</h2>
+            <div id="full-grid" class="projects-grid"></div>
+        </section>
     </div>
-  </footer>
+
+    <footer>
+        <div class="socials">
+            <a href="https://github.com/andreramos282" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://linkedin.com/in/andreramos282" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:andreramos282@exemplo.com"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p style="color: var(--text-dim); font-size: 0.8rem;">© 2026 André Ramos</p>
+    </footer>
+
+    <script>
+        const USER = 'andreramos282';
+        
+        const customDescriptions = {
+            'Datlas-3DSM': 'Interface de mapa interativo focada no território brasileiro, utilizando React e TypeScript para visualização dinâmica de dados geográficos.',
+            'turi': 'Solução de turismo inteligente voltada para a otimização de rotas e experiência do usuário.',
+            'my-turi-project': 'Projeto de desenvolvimento de plataforma turística com foco em integração de serviços e usabilidade para roteiros personalizados.',
+            'schoolar-app': 'Aplicação para gestão da vida acadêmica, permitindo o controle centralizado de horários, notas e progresso estudantil.',
+            'gerenciador-de-eventos': 'Sistema eficiente para organização de eventos, com fluxos simplificados para cadastro e gerenciamento.',
+            'crud-livros': 'Interface para gerenciamento de bibliotecas, explorando operações de banco de dados e persistência de informações.',
+            'nutri-app': 'Assistente digital focado em saúde e nutrição, auxiliando no monitoramento de dietas e metas calóricas.'
+        };
+
+        const ABP_LIST = ['Datlas-3DSM', 'turi', 'my-turi-project'];
+        const HIGHLIGHT_LIST = ['schoolar-app', 'gerenciador-de-eventos', 'crud-livros', 'nutri-app'];
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            document.getElementById('btn-' + pageId).classList.add('active');
+            window.scrollTo(0,0);
+        }
+
+        async function init() {
+            try {
+                const res = await fetch(`https://api.github.com/users/${USER}/repos?sort=updated&per_page=100`);
+                const repos = await res.json();
+
+                const abpGrid = document.getElementById('abp-grid');
+                const highGrid = document.getElementById('highlights-grid');
+                const fullGrid = document.getElementById('full-grid');
+
+                repos.forEach(repo => {
+                    if(repo.fork) return;
+
+                    const desc = customDescriptions[repo.name] || repo.description || 'Desenvolvimento técnico focado em usabilidade e performance.';
+                    
+                    const card = `
+                        <a href="${repo.html_url}" target="_blank" class="card">
+                            <h3>${repo.name.replace(/-/g, ' ')}</h3>
+                            <p>${desc}</p>
+                            <div class="card-footer">${repo.language || 'Software'}</div>
+                        </a>
+                    `;
+
+                    if(ABP_LIST.includes(repo.name)) {
+                        abpGrid.innerHTML += card;
+                    } else if(HIGHLIGHT_LIST.includes(repo.name)) {
+                        highGrid.innerHTML += card;
+                    }
+                    fullGrid.innerHTML += card;
+                });
+            } catch (e) {
+                console.error("Erro ao carregar repositórios do GitHub.");
+            }
+        }
+        init();
+    </script>
 </body>
 </html>
