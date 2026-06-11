@@ -1,179 +1,730 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>André Ramos | Portfólio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #0f172a;
-            --secondary: #1e293b;
-            --accent: #06b6d4;
-            --text-white: #f8fafc;
-            --text-dim: #94a3b8;
-            --border: rgba(255, 255, 255, 0.1);
-            --glass: rgba(15, 23, 42, 0.9);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio acadêmico de André Ramos Jr., desenvolvedor full stack com maior experiência em frontend." />
+  <title>André Ramos Jr. | Portfólio</title>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            background: var(--primary); 
-            color: var(--text-white);
-            line-height: 1.6;
-        }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  <style>
+    :root {
+      --primary: #07111f;
+      --secondary: #0f1f35;
+      --surface: rgba(15, 31, 53, 0.86);
+      --surface-strong: #132842;
+      --accent: #22d3ee;
+      --accent-2: #8b5cf6;
+      --success: #34d399;
+      --text-white: #f8fafc;
+      --text-dim: #a9b7cb;
+      --border: rgba(255, 255, 255, 0.12);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+      --radius: 24px;
+    }
 
-        nav {
-            position: sticky; top: 0; background: var(--glass);
-            backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000;
-        }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; height: 80px; }
-        .logo { font-weight: 800; font-size: 1.2rem; color: var(--accent); }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a {
-            text-decoration: none; color: var(--text-dim); font-weight: 600;
-            font-size: 0.9rem; cursor: pointer; transition: 0.3s;
-        }
-        .nav-links a:hover, .nav-links a.active { color: var(--text-white); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        .page { display: none; padding: 60px 0; animation: fadeIn 0.5s ease; }
-        .page.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    html { scroll-behavior: smooth; }
 
-        .profile-header { display: flex; align-items: center; gap: 40px; margin-bottom: 80px; }
-        .profile-img { width: 180px; height: 180px; border-radius: 24px; object-fit: cover; border: 2px solid var(--accent); }
-        .profile-info h1 { font-size: 2.8rem; letter-spacing: -1px; }
+    body {
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 0 0, rgba(34, 211, 238, 0.18), transparent 34rem),
+        radial-gradient(circle at 100% 0, rgba(139, 92, 246, 0.18), transparent 30rem),
+        linear-gradient(180deg, var(--primary), #050b14 75%);
+      color: var(--text-white);
+      min-height: 100vh;
+      line-height: 1.65;
+    }
 
-        .section-title { 
-            font-size: 1.5rem; margin: 50px 0 25px; 
-            display: flex; align-items: center; gap: 12px;
-            padding-bottom: 10px; border-bottom: 1px solid var(--border);
-        }
-        
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
-        
-        .card {
-            background: var(--secondary); border: 1px solid var(--border);
-            padding: 30px; border-radius: 16px; text-decoration: none; color: inherit;
-            transition: 0.3s; display: flex; flex-direction: column;
-        }
-        .card:hover { transform: translateY(-5px); border-color: var(--accent); }
-        .card h3 { margin-bottom: 12px; font-size: 1.2rem; color: var(--text-white); }
-        .card p { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 20px; flex-grow: 1; }
-        .card-footer { font-size: 0.75rem; font-weight: 700; color: var(--accent); text-transform: uppercase; }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
 
-        footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 80px; text-align: center; }
-        .socials { display: flex; justify-content: center; gap: 25px; margin-bottom: 20px; }
-        .socials a { color: var(--text-dim); font-size: 1.5rem; transition: 0.3s; }
-        .socials a:hover { color: var(--accent); }
-    </style>
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      background: rgba(7, 17, 31, 0.86);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-content {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+    }
+
+    .logo::before {
+      content: "</>";
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: #03111d;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 14px 36px rgba(34, 211, 238, 0.18);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      cursor: pointer;
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--text-dim);
+      font-size: 0.92rem;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-white);
+      background: rgba(255, 255, 255, 0.07);
+      border-color: var(--border);
+    }
+
+    .page {
+      display: none;
+      animation: fadeIn 0.35s ease;
+      padding: 54px 0 30px;
+    }
+
+    .page.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 42px;
+    }
+
+    .hero-card,
+    .profile-card,
+    .panel,
+    .card {
+      background: linear-gradient(180deg, rgba(19, 40, 66, 0.92), rgba(15, 31, 53, 0.86));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+
+    .hero-card {
+      padding: clamp(26px, 5vw, 46px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), #67e8f9);
+      color: #03111d;
+      font-weight: 900;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      font-size: clamp(2.35rem, 6vw, 4.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      margin-bottom: 20px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 5%, #c7f3ff 45%, #c4b5fd 88%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-card p,
+    .profile-card p,
+    .section-desc,
+    .panel p,
+    .card p,
+    .card li {
+      color: var(--text-dim);
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 16px;
+      border-radius: 15px;
+      font-weight: 900;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      color: #03111d;
+      background: linear-gradient(135deg, var(--accent), #67e8f9);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+
+    .profile-card {
+      padding: 26px;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .profile-card img {
+      width: 132px;
+      height: 132px;
+      border-radius: 30px;
+      object-fit: cover;
+      border: 2px solid rgba(34, 211, 238, 0.72);
+      margin-bottom: 18px;
+    }
+
+    .profile-card h2 { font-size: 1.45rem; }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .tag {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.06);
+      color: #e6f7ff;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 850;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 36px 0 10px;
+      font-size: clamp(1.55rem, 3vw, 2.2rem);
+      letter-spacing: -0.04em;
+    }
+
+    .section-title i { color: var(--accent); }
+    .section-desc { max-width: 760px; margin-bottom: 22px; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      min-height: 330px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.24s ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(34, 211, 238, 0.18), transparent 15rem);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .card > * { position: relative; }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(34, 211, 238, 0.55);
+    }
+
+    .card h3 {
+      font-size: 1.22rem;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .card ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      margin: 14px 0 18px;
+    }
+
+    .card li {
+      display: flex;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+
+    .card li i {
+      color: var(--success);
+      margin-top: 5px;
+      font-size: 0.75rem;
+    }
+
+    .card-footer {
+      margin-top: auto;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tech {
+      padding: 6px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.055);
+      font-size: 0.73rem;
+      font-weight: 850;
+      color: #e6f7ff;
+    }
+
+    .repo-link {
+      margin-top: 18px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 12px;
+      border-radius: 14px;
+      color: #03111d;
+      background: var(--text-white);
+      font-weight: 900;
+    }
+
+    .repo-link:hover { background: var(--accent); }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .panel { padding: 24px; box-shadow: 0 18px 50px rgba(0,0,0,0.2); }
+    .panel h3 { margin-bottom: 10px; }
+
+    .clean-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .clean-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .clean-list i {
+      color: var(--accent);
+      margin-top: 5px;
+    }
+
+    .repo-search {
+      margin: 24px 0;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .repo-search input {
+      width: min(440px, 100%);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: rgba(255,255,255,0.07);
+      color: var(--text-white);
+      padding: 13px 15px;
+      font: inherit;
+      outline: none;
+    }
+
+    .repo-search input:focus {
+      border-color: rgba(34, 211, 238, 0.72);
+      box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.11);
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 34px 0 46px;
+      color: var(--text-dim);
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 13px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      font-weight: 850;
+    }
+
+    .socials a:hover { background: rgba(255,255,255,0.1); }
+
+    @media (max-width: 950px) {
+      .hero,
+      .info-grid { grid-template-columns: 1fr; }
+
+      .projects-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .nav-content {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 0;
+      }
+
+      .nav-links { justify-content: flex-start; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .page { padding-top: 34px; }
+    }
+  </style>
 </head>
+
 <body>
-
-    <nav>
-        <div class="container nav-content">
-            <div class="logo">ANDRÉ RAMOS</div>
-            <div class="nav-links">
-                <a onclick="showPage('home')" id="btn-home" class="active">Início</a>
-                <a onclick="showPage('arquivo')" id="btn-arquivo">Projetos</a>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <section id="home" class="page active">
-            <div class="profile-header">
-                <img src="https://github.com/andreramos282.png" alt="André Ramos" class="profile-img">
-                <div class="profile-info">
-                    <h1>André Ramos</h1>
-                    <p style="color: var(--text-dim); font-size: 1.1rem;">Desenvolvedor de Software | Engenharia</p>
-                </div>
-            </div>
-
-            <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Projetos Integradores (ABP)</h2>
-            <div id="abp-grid" class="projects-grid"></div>
-
-            <h2 class="section-title"><i class="fa-solid fa-star"></i> Destaques Técnicos</h2>
-            <div id="highlights-grid" class="projects-grid"></div>
-        </section>
-
-        <section id="arquivo" class="page">
-            <h2 class="section-title">Repositórios Públicos</h2>
-            <div id="full-grid" class="projects-grid"></div>
-        </section>
+  <nav>
+    <div class="container nav-content">
+      <div class="logo">ANDRÉ RAMOS JR.</div>
+      <div class="nav-links" aria-label="Navegação entre páginas">
+        <a onclick="showPage('home')" id="btn-home" class="active">Início</a>
+        <a onclick="showPage('arquivo')" id="btn-arquivo">Projetos</a>
+      </div>
     </div>
+  </nav>
 
-    <footer>
-        <div class="socials">
-            <a href="https://github.com/andreramos282" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="https://linkedin.com/in/andreramos282" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="mailto:andreramos282@exemplo.com"><i class="fa-solid fa-envelope"></i></a>
+  <main class="container">
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="hero-card">
+          <span class="eyebrow"><i class="fa-solid fa-laptop-code"></i> Full Stack • Frontend First</span>
+          <h1 class="gradient-text">Portfólio Acadêmico e Profissional</h1>
+          <p>
+            Sou Desenvolvedor Full Stack com maior experiência em Frontend, estudante de Desenvolvimento
+            de Software Multiplataforma na Fatec Jacareí. Tenho foco em interfaces responsivas,
+            experiência do usuário, organização visual, componentes reutilizáveis e integração entre sistemas.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" onclick="showPage('arquivo')"><i class="fa-solid fa-folder-open"></i> Ver todos os projetos</a>
+            <a class="btn btn-secondary" href="#contato"><i class="fa-solid fa-user"></i> Contatos</a>
+          </div>
         </div>
-        <p style="color: var(--text-dim); font-size: 0.8rem;">© 2026 André Ramos</p>
-    </footer>
 
-    <script>
-        const USER = 'andreramos282';
-        
-        const customDescriptions = {
-            'Datlas-3DSM': 'Interface de mapa interativo focada no território brasileiro, utilizando React e TypeScript para visualização dinâmica de dados geográficos.',
-            'turi': 'Solução de turismo inteligente voltada para a otimização de rotas e experiência do usuário.',
-            'my-turi-project': 'Projeto de desenvolvimento de plataforma turística com foco em integração de serviços e usabilidade para roteiros personalizados.',
-            'schoolar-app': 'Aplicação para gestão da vida acadêmica, permitindo o controle centralizado de horários, notas e progresso estudantil.',
-            'gerenciador-de-eventos': 'Sistema eficiente para organização de eventos, com fluxos simplificados para cadastro e gerenciamento.',
-            'crud-livros': 'Interface para gerenciamento de bibliotecas, explorando operações de banco de dados e persistência de informações.',
-            'nutri-app': 'Assistente digital focado em saúde e nutrição, auxiliando no monitoramento de dietas e metas calóricas.'
-        };
+        <aside class="profile-card">
+          <img src="https://github.com/andreramos282.png" alt="Foto de perfil de André Ramos Jr.">
+          <h2>André Ramos Jr.</h2>
+          <p>Desenvolvedor Full Stack | Especializado em Frontend e Experiência do Usuário.</p>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Frontend</span>
+            <span class="tag">Full Stack</span>
+            <span class="tag">UX/UI</span>
+            <span class="tag">GitHub</span>
+          </div>
+        </aside>
+      </div>
 
-        const ABP_LIST = ['Datlas-3DSM', 'turi', 'my-turi-project'];
-        const HIGHLIGHT_LIST = ['schoolar-app', 'gerenciador-de-eventos', 'crud-livros', 'nutri-app'];
+      <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Projetos Acadêmicos</h2>
+      <p class="section-desc">
+        Principais projetos acadêmicos desenvolvidos na Fatec. Minha atuação foi Full Stack,
+        com maior contribuição na camada Frontend, incluindo telas, componentes, navegação,
+        usabilidade e responsividade.
+      </p>
+      <div id="abp-grid" class="projects-grid"></div>
 
-        function showPage(pageId) {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
-            document.getElementById('btn-' + pageId).classList.add('active');
-            window.scrollTo(0,0);
-        }
+      <h2 class="section-title"><i class="fa-solid fa-star"></i> Destaques Técnicos</h2>
+      <p class="section-desc">
+        Outros projetos e estudos que reforçam minhas habilidades em desenvolvimento web,
+        organização de interfaces, formulários, lógica e integração com dados.
+      </p>
+      <div id="highlights-grid" class="projects-grid"></div>
 
-        async function init() {
-            try {
-                const res = await fetch(`https://api.github.com/users/${USER}/repos?sort=updated&per_page=100`);
-                const repos = await res.json();
+      <section id="sobre">
+        <h2 class="section-title"><i class="fa-solid fa-user-tie"></i> Sobre mim</h2>
+        <div class="info-grid">
+          <div class="panel">
+            <h3>Perfil profissional</h3>
+            <p>
+              Profissional com formação técnica em Química e experiência em estação de tratamento de água
+              automatizada. Atualmente curso Desenvolvimento de Software Multiplataforma e Projetos de
+              Estruturas Aeronáuticas, com interesse em tecnologia, engenharia e inovação.
+            </p>
+          </div>
 
-                const abpGrid = document.getElementById('abp-grid');
-                const highGrid = document.getElementById('highlights-grid');
-                const fullGrid = document.getElementById('full-grid');
+          <div class="panel">
+            <h3>Competências</h3>
+            <ul class="clean-list">
+              <li><i class="fa-solid fa-check"></i><span>Frontend, responsividade, componentes e UX/UI.</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Lógica de programação, banco de dados e Git.</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Organização, documentação e trabalho em equipe.</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Controle de qualidade, relatórios técnicos e sistemas automatizados.</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-                repos.forEach(repo => {
-                    if(repo.fork) return;
+      <section>
+        <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Formação Acadêmica e Competências</h2>
+        <div class="info-grid">
+          <div class="panel">
+            <h3>Formação Acadêmica</h3>
+            <ul class="clean-list">
+              <li><i class="fa-solid fa-award"></i><span>Tecnólogo em Desenvolvimento de Software Multiplataforma — Fatec Jacareí (Cursando – 4º semestre).</span></li>
+              <li><i class="fa-solid fa-award"></i><span>Tecnólogo em Projetos de Estruturas Aeronáuticas — Fatec São José dos Campos (Cursando).</span></li>
+              <li><i class="fa-solid fa-award"></i><span>Técnico em Química — ETEC Jacareí (Concluído).</span></li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Competências</h3>
+            <ul class="clean-list">
+              
+<li><i class="fa-solid fa-check"></i><span>HTML5, CSS3, JavaScript e TypeScript.</span></li>
+<li><i class="fa-solid fa-check"></i><span>React, React Native e Node.js.</span></li>
+<li><i class="fa-solid fa-check"></i><span>PostgreSQL, Banco de Dados e Git/GitHub.</span></li>
+<li><i class="fa-solid fa-check"></i><span>Desenvolvimento Full Stack com foco em Frontend.</span></li>
+<li><i class="fa-solid fa-check"></i><span>UX/UI, Responsividade e Experiência do Usuário.</span></li>
+<li><i class="fa-solid fa-check"></i><span>Resolução de Problemas, Trabalho em Equipe e Documentação.</span></li>
 
-                    const desc = customDescriptions[repo.name] || repo.description || 'Desenvolvimento técnico focado em usabilidade e performance.';
-                    
-                    const card = `
-                        <a href="${repo.html_url}" target="_blank" class="card">
-                            <h3>${repo.name.replace(/-/g, ' ')}</h3>
-                            <p>${desc}</p>
-                            <div class="card-footer">${repo.language || 'Software'}</div>
-                        </a>
-                    `;
+            </ul>
+          </div>
+        </div>
+      </section>
+    </section>
 
-                    if(ABP_LIST.includes(repo.name)) {
-                        abpGrid.innerHTML += card;
-                    } else if(HIGHLIGHT_LIST.includes(repo.name)) {
-                        highGrid.innerHTML += card;
-                    }
-                    fullGrid.innerHTML += card;
-                });
-            } catch (e) {
-                console.error("Erro ao carregar repositórios do GitHub.");
-            }
-        }
-        init();
-    </script>
+    <section id="arquivo" class="page">
+      <h2 class="section-title"><i class="fa-solid fa-folder-open"></i> Projetos</h2>
+      <p class="section-desc">
+        Página de projetos restaurada no modelo do portfólio original. Os cards abaixo funcionam como
+        ligações para os repositórios no GitHub, incluindo os projetos acadêmicos ABP e outros projetos públicos.
+      </p>
+
+      <div class="repo-search">
+        <input id="search-projects" type="search" placeholder="Buscar projeto por nome, tecnologia ou descrição..." oninput="filterProjects()" aria-label="Buscar projetos">
+        <span class="tag"><i class="fa-brands fa-github"></i> Clique em um card para abrir o GitHub</span>
+      </div>
+
+      <div id="full-grid" class="projects-grid"></div>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <div class="socials">
+      <a href="https://github.com/andreramos282" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/andr%C3%A9-luis-283085252/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    </div>
+    <p>© 2026 André Ramos Jr. • Portfólio acadêmico e profissional.</p>
+  </footer>
+
+  <script>
+    const academicProjects = [
+      {
+        name: 'Turi - Myopes',
+        semester: '2º Semestre DSM',
+        url: 'https://github.com/My0pes/Turi-Myopes-2DSM',
+        description: 'Sistema acadêmico voltado à visualização e organização de informações ambientais, biomas, estados e mapas.',
+        participation: [
+          'Atuação como Desenvolvedor Full Stack, com maior foco no Frontend.',
+          'Criação das telas principais, componentes visuais e navegação.',
+          'Ajustes de responsividade, usabilidade e organização do conteúdo.'
+        ],
+        techs: ['Frontend', 'UX/UI', 'Responsivo', 'ABP']
+      },
+      {
+        name: 'Datlas',
+        semester: '3º Semestre DSM',
+        url: 'https://github.com/My0pes/Datlas-3DSM',
+        description: 'Plataforma acadêmica para análise, visualização e organização de dados geográficos e ambientais.',
+        participation: [
+          'Atuação como Desenvolvedor Full Stack, com maior foco no Frontend.',
+          'Construção de interfaces, componentes e organização visual dos dados.',
+          'Padronização do layout e colaboração na experiência do usuário.'
+        ],
+        techs: ['React', 'TypeScript', 'Dados', 'ABP']
+      },
+      {
+        name: 'ABP 4º DSM - Myopes',
+        semester: '4º Semestre DSM',
+        url: 'https://github.com/Danilo-Fatec/ABP-4-DSM-Myopes',
+        description: 'Sistema acadêmico desenvolvido em equipe utilizando metodologia ABP, com módulos, telas e formulários.',
+        participation: [
+          'Atuação como Desenvolvedor Full Stack, com maior foco no Frontend.',
+          'Desenvolvimento de telas administrativas, formulários e componentes.',
+          'Apoio na integração visual entre os módulos do sistema.'
+        ],
+        techs: ['Full Stack', 'Frontend', 'Formulários', 'ABP']
+      }
+    ];
+
+    const otherProjects = [
+      {
+        name: 'App Scholar',
+        semester: 'Projeto Mobile',
+        url: 'https://github.com/andreramos282/app-scholar',
+        description: 'Aplicação acadêmica/mobile para gestão escolar, com telas, módulos e integração com backend.',
+        participation: [
+          'Desenvolvimento de telas e fluxos do sistema.',
+          'Organização visual dos módulos e navegação.',
+          'Integração entre frontend e funcionalidades da aplicação.'
+        ],
+        techs: ['React Native', 'Expo', 'Full Stack']
+      },
+      {
+        name: 'Gerenciador de Eventos',
+        semester: 'Projeto Web',
+        url: 'https://github.com/andreramos282/gerenciador-de-eventos',
+        description: 'Sistema para organização e gerenciamento de eventos com foco em cadastros e usabilidade.',
+        participation: [
+          'Construção de interfaces e organização de formulários.',
+          'Aplicação de lógica de cadastro e listagem.',
+          'Aprimoramento de fluxo de uso.'
+        ],
+        techs: ['Web', 'CRUD', 'Frontend']
+      },
+      {
+        name: 'CRUD Livros',
+        semester: 'Projeto de Estudo',
+        url: 'https://github.com/andreramos282/crud-livros',
+        description: 'Projeto para praticar operações de cadastro, listagem, edição e remoção de livros.',
+        participation: [
+          'Estruturação das telas.',
+          'Organização do fluxo CRUD.',
+          'Prática de lógica, dados e interface.'
+        ],
+        techs: ['CRUD', 'Banco de Dados', 'Web']
+      },
+      {
+        name: 'Nutri App',
+        semester: 'Projeto de Estudo',
+        url: 'https://github.com/andreramos282/nutri-app',
+        description: 'Aplicação com foco em saúde e nutrição, explorando organização de informações e experiência do usuário.',
+        participation: [
+          'Criação da interface de uso.',
+          'Organização dos dados em telas claras.',
+          'Ajustes visuais e funcionais.'
+        ],
+        techs: ['Frontend', 'Mobile', 'UX']
+      }
+    ];
+
+    const allProjects = [...academicProjects, ...otherProjects];
+
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+      document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+
+      document.getElementById(pageId).classList.add('active');
+      document.getElementById('btn-' + pageId).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function createProjectCard(project) {
+      const participation = project.participation.map(item => `
+        <li><i class="fa-solid fa-check"></i><span>${item}</span></li>
+      `).join('');
+
+      const techs = project.techs.map(tech => `<span class="tech">${tech}</span>`).join('');
+
+      return `
+        <article class="card project-item" data-search="${(project.name + ' ' + project.description + ' ' + project.techs.join(' ') + ' ' + project.semester).toLowerCase()}">
+          <span class="tag">${project.semester}</span>
+          <h3>${project.name}</h3>
+          <p>${project.description}</p>
+          <ul>${participation}</ul>
+          <div class="card-footer">${techs}</div>
+          <a class="repo-link" href="${project.url}" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i> Abrir repositório
+          </a>
+        </article>
+      `;
+    }
+
+    function renderProjects() {
+      document.getElementById('abp-grid').innerHTML = academicProjects.map(createProjectCard).join('');
+      document.getElementById('highlights-grid').innerHTML = otherProjects.slice(0, 3).map(createProjectCard).join('');
+      document.getElementById('full-grid').innerHTML = allProjects.map(createProjectCard).join('');
+    }
+
+    function filterProjects() {
+      const term = document.getElementById('search-projects').value.toLowerCase().trim();
+
+      document.querySelectorAll('#full-grid .project-item').forEach(card => {
+        const content = card.getAttribute('data-search');
+        card.style.display = content.includes(term) ? 'flex' : 'none';
+      });
+    }
+
+    renderProjects();
+  </script>
 </body>
 </html>
