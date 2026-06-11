@@ -1,20 +1,19 @@
+# Portfólio de Projetos - Fatec Jacareí
 
-# PortfÃ³lio de Projetos - Fatec JacareÃ­
-
-**Aluno:** AndrÃ© Luis Alves Ramos Junior
+**Aluno:** André Luis Alves Ramos Junior
 
 **Curso:** Desenvolvimento de Software Multiplataforma
 
-**Turma:** 2024/2 (Ingresso no 2Âº semestre de 2024)
+**Turma:** 2024/2 (Ingresso no 2º semestre de 2024)
 
 ---
 
-## PortfÃ³lio Online
+## Portfólio Online
 
-ðŸ”—https://fatec-jacarei-dsm-portfolio.github.io/ra2581392423044/
+🔗 https://fatec-jacarei-dsm-portfolio.github.io/ra2581392423044/
 
 ---
 
-## VÃ­deos de ApresentaÃ§Ã£o
+## Vídeos de Apresentação
 
 
