@@ -1,6 +1,3 @@
-# Portfólio Acadêmico - André Ramos Jr.
-
-## Acesso ao Portfólio
 
 # Portfólio de Projetos - Fatec Jacareí
 
