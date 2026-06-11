@@ -5,7 +5,9 @@
 # Portfólio de Projetos - Fatec Jacareí
 
 **Aluno:** André Luis Alves Ramos Junior
+
 **Curso:** Desenvolvimento de Software Multiplataforma
+
 **Turma:** 2024/2 (Ingresso no 2º semestre de 2024)
 
 ---
