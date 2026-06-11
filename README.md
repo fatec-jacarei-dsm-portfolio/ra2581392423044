@@ -2,34 +2,21 @@
 
 ## Acesso ao Portfólio
 
-GitHub Pages:  
-https://fatec-jacarei-dsm-portfolio.github.io/ra2581392423044/
+# Portfólio de Projetos - Fatec Jacareí
 
-## Vídeo de apresentação
+**Aluno:** André Luis Alves Ramos Junior
+**Curso:** Desenvolvimento de Software Multiplataforma
+**Turma:** 2024/2 (Ingresso no 2º semestre de 2024)
 
-Em desenvolvimento.
+---
 
-## Sobre
+## Portfólio Online
 
-Portfólio acadêmico e profissional de André Ramos Jr., Desenvolvedor Full Stack com maior experiência em Frontend.
+🔗https://fatec-jacarei-dsm-portfolio.github.io/ra2581392423044/
 
-## Observação
+---
 
-O link do GitHub Pages deve ficar somente neste README.  
-No portfólio, os links direcionam para os repositórios dos projetos no GitHub.
+## Vídeos de Apresentação
 
-## Projetos Acadêmicos
 
-### Turi - Myopes | 2º Semestre DSM
-Repositório: https://github.com/My0pes/Turi-Myopes-2DSM
-
-### Datlas | 3º Semestre DSM
-Repositório: https://github.com/My0pes/Datlas-3DSM
-
-### ABP 4º DSM - Myopes | 4º Semestre DSM
-Repositório: https://github.com/Danilo-Fatec/ABP-4-DSM-Myopes
-
-## Contatos
-
-- GitHub: https://github.com/andreramos282
-- LinkedIn: https://www.linkedin.com/in/andr%C3%A9-luis-283085252/
+---
